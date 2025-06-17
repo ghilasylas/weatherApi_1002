@@ -7,12 +7,12 @@ import uvicorn
 load_dotenv()
 app = FastAPI()
 
-city = "London"
-api_key = "20ba69e7192d543f70ce7b23aea01e0a"
+CITY = "London"
+API_KEY = "20ba69e7192d543f70ce7b23aea01e0a"
 
 
 def get_weather():
-    url=f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    url=f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}&units=metric"
     try:
         response = requests.get(url)
         data = response.json()
